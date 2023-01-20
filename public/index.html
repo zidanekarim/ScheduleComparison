@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <!-- chrome! -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="388312483979-0f6hup9b4bn8pg1hc98rum4dcsov3qh2.apps.googleusercontent.com">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script> 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <title>Stuyvesant Schedules</title>
+</head>
+<body>
+    <ul class="navbar">
+        <li><a href="index.html">Submit Data</a></li>
+        <li><a href="comparison.html">Compare Data</a></li>
+        <li><a href="https://github.com/ThePotatoPowers/ScheduleComparison">Created by Zidane Karim</a></li>
+
+
+    </ul>
+<h1 id="title"><center>Stuyvesant Schedules</center></h1>
+<center>
+<div id="g_id_onload"
+     data-client_id="388312483979-0f6hup9b4bn8pg1hc98rum4dcsov3qh2.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-callback="onSignIn"
+     data-auto_prompt="false"
+     
+     >
+</div>
+<p id="signInSuccess" class="signInHide">Successfully signed in!</p>
+<div class="g_id_signin" id ="googleButton"
+     data-type="icon"
+     data-shape="circle"
+     data-theme="outline"
+     data-text="signin_with"
+     data-size="large">
+</div>
+
+  </center> 
+
+<p ><center id="description">Enter your information below and press submit</center></p>
+<p ><center class="notes">Enter free periods as FREE, 0, and NO ROOM. </center></p>
+<p ><center class="notes">Enter Lunch as it is on the schedule</center></p>
+<p ><center class="notes">Do not enter lab periods</center></p>
+<center>
+<table id="main-table">
+    <tr>
+        <th class="main-heading">
+            Name
+        </th>
+        <td>
+            <input type="text" id="name" maxlength="50" placeholder="First Last">
+        </td>
+    </tr>
+
+</table>
+
+<table id="periods"> 
+    <tr id="period1" class="periodRow">
+        <th>Period 1</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code1" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section1" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room1" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+    <!-- same row as above for 10 periods-->
+    <tr id="period2" class="periodRow">
+        <th>Period 2</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code2" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section2" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room2" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+    <tr id="period3" class="periodRow">
+        <th>Period 3</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code3" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section3" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room3" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+    <tr id="period4" class="periodRow">
+        <th>Period 4</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code4" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section4" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room4" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+    <tr id="period5" class="periodRow">
+        <th>Period 5</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code5" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section5" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room5" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+    <tr id="period6" class="periodRow">
+        <th>Period 6</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code6" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section6" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room6" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+    <tr id="period7" class="periodRow">
+        <th>Period 7</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code7" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section7" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room7" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+    <tr id="period8" class="periodRow">
+        <th>Period 8</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code8" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section8" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room8" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+    <tr id="period9" class="periodRow">
+        <th>Period 9</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code9" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section9" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room9" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+    <tr id="period10" class="periodRow">
+        <th>Period 10</th>
+        <td>
+            <p>Course Code</p>
+            <input type="text" id="course-code10" maxlength="12" placeholder="MKS21X">
+        </td>
+        <td>
+            <p>Section</p>
+            <input type="text" id="section10" maxlength="3" placeholder="2">
+        </td>
+        <td>
+            <p>Room</p>
+            <input type="text" id="room10" maxlength="10" placeholder="NO ROOM">
+        </td>
+    </tr>
+
+
+</table>
+<a id="submit" class="hiddenButton" onclick="processUser();">Submit</a>
+<a id="success" href="comparison.html">Your data was successfully uploaded!</p>
+</body>
+</html>
