@@ -1,3 +1,4 @@
+var darkCheck = false;
 function loginUser() {
     let email = document.getElementById("emailLogin").value;
     // check if email ends in @stuy.edu
@@ -161,3 +162,61 @@ function loginUser() {
             
 }
 
+darkmode = () => {
+    
+    var element = document.body;
+    if (darkCheck == false) {
+        element.className = "dark-mode";
+        darkCheck = true;
+        var elements = document.querySelectorAll(".navbar li a");
+        elements.forEach(function(element){
+            element.style.color = "white";
+        });
+        // make all borders white
+
+
+        var elements = document.querySelectorAll(".periodTables td");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".periodTables tr");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".periodTables th");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+
+
+
+    }
+    else {
+        element.className = "light-mode";
+        var elements = document.querySelectorAll(".navbar li a");
+        elements.forEach(function(element){
+            element.style.color = "black";
+        });
+        // make all borders white
+
+        var elements = document.querySelectorAll(".periodTables");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".periodTables td");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".periodTables tr");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".periodTables th");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+
+        
+        darkCheck = false;
+    }
+}

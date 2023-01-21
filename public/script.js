@@ -1,3 +1,4 @@
+var darkCheck = false;
 function onSignIn(googleUser) {
 
       // Get the user's ID token and basic profile information
@@ -173,3 +174,96 @@ processUser = () => {
         ;
 }
 
+darkmode = () => {
+    
+    var element = document.body;
+    if (darkCheck == false) {
+        element.className = "dark-mode";
+        darkCheck = true;
+        var elements = document.querySelectorAll(".navbar li a");
+        elements.forEach(function(element){
+            element.style.color = "white";
+        });
+        // make all borders white
+        var elements = document.querySelectorAll(".main-table");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".main-table th");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".main-table td");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".main-table tr");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+
+        var elements = document.querySelectorAll(".periodRow");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".periodRow td");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".periodRow tr");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".periodRow th");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+
+
+
+    }
+    else {
+        element.className = "light-mode";
+        var elements = document.querySelectorAll(".navbar li a");
+        elements.forEach(function(element){
+            element.style.color = "black";
+        });
+        // make all borders white
+        var elements = document.querySelectorAll(".main-table");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".main-table th");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".main-table td");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".main-table tr");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+
+        var elements = document.querySelectorAll(".periodRow");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".periodRow td");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".periodRow tr");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".periodRow th");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+
+        
+        darkCheck = false;
+    }
+}
