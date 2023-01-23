@@ -175,18 +175,15 @@ processUser = () => {
             
         ;
 }
-//var darkCheck = false;
 
 
 
 window.onload = function() {
     if (localStorage.getItem('darkCheck') === null) {
-    // set darkCheck to true
-    //console.log("got ehre!")
+
     localStorage.setItem('darkCheck', true);
     }
-    //console.log(localStorage.getItem('darkCheck') + " is darkCheck")
-    //console.log(localStorage.getItem('darkCheck'), typeof localStorage.getItem('darkCheck'))
+
     darkmode();
 };
 function switchColors() {

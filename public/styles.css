@@ -130,7 +130,50 @@ td, th, tr{
     width: 75%;
 }
 
+#compareDiv.compareDivHide {
+        visibility: hidden;
+    }
 
+#mobileScrollReminder {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #mobileScrollReminder {
+        display: block;
+    }
+    
+    .compareDivShow {
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        height: 75%;
+    }
+    .compareDivHide {
+        display: none;
+    }
+    .periodTables {
+        overflow-y: visible;
+        font-size: 90%;
+        padding: 0;
+        display: block;
+        width: 100%;
+    }
+    .periodTables thead {
+        overflow-y: visible;
+    }
+    .periodTables th {
+        display: block;
+        width: 100%;
+        position: sticky;
+        top: 0;
+    }
+    .periodTables td {
+        display: block;
+        width: 100%;
+    }
+    
+}
 
 
 
