@@ -158,65 +158,123 @@ function loginUser() {
 
     })
         
-        
+    
             
 }
+window.onload = function() {
+    if (localStorage.getItem('darkCheck') === null) {
+    // set darkCheck to true
+    //console.log("got ehre!")
+    localStorage.setItem('darkCheck', true);
+    }
+    //console.log(localStorage.getItem('darkCheck') + " is darkCheck")
+    //console.log(localStorage.getItem('darkCheck'), typeof localStorage.getItem('darkCheck'))
+    darkmode();
+};   
+function switchColors() {
+    if (localStorage.getItem('darkCheck') === "true") {
+        localStorage.setItem('darkCheck', false);
+    }
+    else {
+        localStorage.setItem('darkCheck', true);
+    }
+    darkmode();
+}
 
-darkmode = () => {
+
+function darkmode() {
     
     var element = document.body;
-    if (darkCheck == false) {
+    
+    if (localStorage.getItem('darkCheck') === "false") {
         element.className = "dark-mode";
-        darkCheck = true;
+        
         var elements = document.querySelectorAll(".navbar li a");
         elements.forEach(function(element){
             element.style.color = "white";
         });
         // make all borders white
-
-
-        var elements = document.querySelectorAll(".periodTables td");
+        var elements = document.querySelectorAll(".main-table");
         elements.forEach(function(element){
             element.style.border = "1px solid #fff";
         });
-        var elements = document.querySelectorAll(".periodTables tr");
+        var elements = document.querySelectorAll(".main-table th");
         elements.forEach(function(element){
             element.style.border = "1px solid #fff";
         });
-        var elements = document.querySelectorAll(".periodTables th");
+        var elements = document.querySelectorAll(".main-table td");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".main-table tr");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+
+        var elements = document.querySelectorAll(".periodRow");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".periodRow td");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".periodRow tr");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #fff";
+        });
+        var elements = document.querySelectorAll(".periodRow th");
         elements.forEach(function(element){
             element.style.border = "1px solid #fff";
         });
 
 
-
+        //console.log(localStorage.getItem('darkCheck') + "second");
     }
     else {
+        //console.log(localStorage.getItem('darkCheck') + "0.5");
         element.className = "light-mode";
         var elements = document.querySelectorAll(".navbar li a");
         elements.forEach(function(element){
             element.style.color = "black";
         });
         // make all borders white
+        var elements = document.querySelectorAll(".main-table");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".main-table th");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".main-table td");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
+        var elements = document.querySelectorAll(".main-table tr");
+        elements.forEach(function(element){
+            element.style.border = "1px solid #000";
+        });
 
-        var elements = document.querySelectorAll(".periodTables");
+        var elements = document.querySelectorAll(".periodRow");
         elements.forEach(function(element){
             element.style.border = "1px solid #000";
         });
-        var elements = document.querySelectorAll(".periodTables td");
+        var elements = document.querySelectorAll(".periodRow td");
         elements.forEach(function(element){
             element.style.border = "1px solid #000";
         });
-        var elements = document.querySelectorAll(".periodTables tr");
+        var elements = document.querySelectorAll(".periodRow tr");
         elements.forEach(function(element){
             element.style.border = "1px solid #000";
         });
-        var elements = document.querySelectorAll(".periodTables th");
+        var elements = document.querySelectorAll(".periodRow th");
         elements.forEach(function(element){
             element.style.border = "1px solid #000";
         });
 
         
-        darkCheck = false;
+        //console.log(localStorage.getItem('darkCheck') + "third");
+        
     }
 }

@@ -1,4 +1,6 @@
-var darkCheck = false;
+
+
+
 function onSignIn(googleUser) {
 
       // Get the user's ID token and basic profile information
@@ -173,13 +175,38 @@ processUser = () => {
             
         ;
 }
+//var darkCheck = false;
 
-darkmode = () => {
+
+
+window.onload = function() {
+    if (localStorage.getItem('darkCheck') === null) {
+    // set darkCheck to true
+    //console.log("got ehre!")
+    localStorage.setItem('darkCheck', true);
+    }
+    //console.log(localStorage.getItem('darkCheck') + " is darkCheck")
+    //console.log(localStorage.getItem('darkCheck'), typeof localStorage.getItem('darkCheck'))
+    darkmode();
+};
+function switchColors() {
+    if (localStorage.getItem('darkCheck') === "true") {
+        localStorage.setItem('darkCheck', false);
+    }
+    else {
+        localStorage.setItem('darkCheck', true);
+    }
+    darkmode();
+}
+
+
+function darkmode() {
     
     var element = document.body;
-    if (darkCheck == false) {
+    
+    if (localStorage.getItem('darkCheck') === "false") {
         element.className = "dark-mode";
-        darkCheck = true;
+        
         var elements = document.querySelectorAll(".navbar li a");
         elements.forEach(function(element){
             element.style.color = "white";
@@ -220,9 +247,10 @@ darkmode = () => {
         });
 
 
-
+        //console.log(localStorage.getItem('darkCheck') + "second");
     }
     else {
+        //console.log(localStorage.getItem('darkCheck') + "0.5");
         element.className = "light-mode";
         var elements = document.querySelectorAll(".navbar li a");
         elements.forEach(function(element){
@@ -264,6 +292,7 @@ darkmode = () => {
         });
 
         
-        darkCheck = false;
+        //console.log(localStorage.getItem('darkCheck') + "third");
+        
     }
 }
