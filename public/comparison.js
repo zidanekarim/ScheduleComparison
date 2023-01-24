@@ -84,11 +84,26 @@ function loginUser() {
             
 
             const Period1Table = document.getElementById("Period1Table").getElementsByTagName('tbody')[0];
+            // add schedule1.courseCode1 into Period1Table th title
+            //console.log(schedule1[0])
+            document.getElementById("Period1Table").getElementsByTagName('th')[0].setAttribute("title", schedule1[0].Period1.courseCode1);
+            document.getElementById("Period2Table").getElementsByTagName('th')[0].setAttribute("title", schedule2[0].Period2.courseCode2);
+            document.getElementById("Period3Table").getElementsByTagName('th')[0].setAttribute("title", schedule3[0].Period3.courseCode3);
+            document.getElementById("Period4Table").getElementsByTagName('th')[0].setAttribute("title", schedule4[0].Period4.courseCode4);
+            document.getElementById("Period5Table").getElementsByTagName('th')[0].setAttribute("title", schedule5[0].Period5.courseCode5);
+            document.getElementById("Period6Table").getElementsByTagName('th')[0].setAttribute("title", schedule6[0].Period6.courseCode6);
+            document.getElementById("Period7Table").getElementsByTagName('th')[0].setAttribute("title", schedule7[0].Period7.courseCode7);
+            document.getElementById("Period8Table").getElementsByTagName('th')[0].setAttribute("title", schedule8[0].Period8.courseCode8);
+            document.getElementById("Period9Table").getElementsByTagName('th')[0].setAttribute("title", schedule9[0].Period9.courseCode9);
+            document.getElementById("Period10Table").getElementsByTagName('th')[0].setAttribute("title", schedule10[0].Period10.courseCode10);
+
             // add emails from email1 into Period1Table
             for (let i = 0; i < emails1.length; i++) {
                 let newRow = Period1Table.insertRow(Period1Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails1[i];
+                // set title of cell to name
+                cell.setAttribute("title", schedule1[i].name);
             }
             // do this for all 10 periods
             const Period2Table = document.getElementById("Period2Table").getElementsByTagName('tbody')[0];
@@ -96,6 +111,7 @@ function loginUser() {
                 let newRow = Period2Table.insertRow(Period2Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails2[i];
+                cell.setAttribute("title", schedule1[i].name);
             }
 
             const Period3Table = document.getElementById("Period3Table").getElementsByTagName('tbody')[0];
@@ -103,6 +119,7 @@ function loginUser() {
                 let newRow = Period3Table.insertRow(Period3Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails3[i];
+                cell.setAttribute("title", schedule1[i].name);
             }
 
             const Period4Table = document.getElementById("Period4Table").getElementsByTagName('tbody')[0];
@@ -110,6 +127,7 @@ function loginUser() {
                 let newRow = Period4Table.insertRow(Period4Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails4[i];
+                cell.setAttribute("title", schedule1[i].name);
             }
 
             const Period5Table = document.getElementById("Period5Table").getElementsByTagName('tbody')[0];
@@ -117,6 +135,7 @@ function loginUser() {
                 let newRow = Period5Table.insertRow(Period5Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails5[i];
+                cell.setAttribute("title", schedule1[i].name);
             }
 
             const Period6Table = document.getElementById("Period6Table").getElementsByTagName('tbody')[0];
@@ -124,6 +143,7 @@ function loginUser() {
                 let newRow = Period6Table.insertRow(Period6Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails6[i];
+                cell.setAttribute("title", schedule1[i].name);
             }
 
             const Period7Table = document.getElementById("Period7Table").getElementsByTagName('tbody')[0];
@@ -131,6 +151,7 @@ function loginUser() {
                 let newRow = Period7Table.insertRow(Period7Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails7[i];
+                cell.setAttribute("title", schedule1[i].name);
             }
 
             const Period8Table = document.getElementById("Period8Table").getElementsByTagName('tbody')[0];
@@ -138,18 +159,21 @@ function loginUser() {
                 let newRow = Period8Table.insertRow(Period8Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails8[i];
+                cell.setAttribute("title", schedule1[i].name);
             }
             const Period9Table = document.getElementById("Period9Table").getElementsByTagName('tbody')[0];
             for (let i = 0; i < emails9.length; i++) {
                 let newRow = Period9Table.insertRow(Period9Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails9[i];
+                cell.setAttribute("title", schedule1[i].name);
             }
             const Period10Table = document.getElementById("Period10Table").getElementsByTagName('tbody')[0];
             for (let i = 0; i < emails10.length; i++) {
                 let newRow = Period10Table.insertRow(Period10Table.length);
                 let cell = newRow.insertCell(0);
                 cell.innerHTML = emails10[i];
+                cell.setAttribute("title", schedule1[i].name);
             }
 
             // hide submit button 
