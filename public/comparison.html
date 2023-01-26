@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta name="google-signin-client_id"
+        content="388312483979-0f6hup9b4bn8pg1hc98rum4dcsov3qh2.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Comparison</title>
     <script src="comparison.js"></script>
@@ -15,6 +19,8 @@
     </style>
 </head>
 
+
+
 <body>
     <!-- navbar -->
     <ul class="navbar">
@@ -25,90 +31,98 @@
 
     </ul>
     <center>
-    <table>
-    <th class="main-heading">Stuyvesant Email</th>
+        <table id="signInTable">
+            <th class="main-heading">Sign In</th>
             <td>
-                <input type="text" id="emailLogin" minlength="9" maxlength="50" placeholder="jdoe45@stuy.edu">
-            </td>
-            <td>
-                <a class="button" id="submitCompare" onclick="loginUser();">Submit</a>
+                <div id="g_id_onload"
+                    data-client_id="388312483979-0f6hup9b4bn8pg1hc98rum4dcsov3qh2.apps.googleusercontent.com"
+                    data-context="signin" data-ux_mode="popup" data-callback="onSignIn" data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin" id="googleButton" data-type="icon" data-shape="circle" data-theme="outline"
+                    data-text="signin_with" data-size="large">
+                </div>
+                
             </td>
 
-    </table>
+
+        </table>
+        <p id="signInSuccess" class="signInHide">Successfully signed in!</p>
+
     </center>
 
     <div id="compareDiv" class="compareDivHide">
-    <table class="periodTables" id="Period1Table">
-        <tr>
-            <th class="main-heading">Period 1</th>
-            
-        </tr>
+        <table class="periodTables" id="Period1Table">
+            <tr>
+                <th class="main-heading">Period 1</th>
 
-    </table>
-    <table class="periodTables" id="Period2Table">
-        <tr>
-            <th class="main-heading">Period 2</th>
-            
-        </tr>
+            </tr>
 
-    </table>
-    <table class="periodTables" id="Period3Table">
-        <tr>
-            <th class="main-heading">Period 3</th>
-            
-        </tr>
+        </table>
+        <table class="periodTables" id="Period2Table">
+            <tr>
+                <th class="main-heading">Period 2</th>
 
-    </table>
-    <table class="periodTables" id="Period4Table">
-        <tr>
-            <th class="main-heading">Period 4</th>
-            
-        </tr>
+            </tr>
 
-    </table>
-    <table class="periodTables" id="Period5Table">
-        <tr>
-            <th class="main-heading">Period 5</th>
-            
-        </tr>
+        </table>
+        <table class="periodTables" id="Period3Table">
+            <tr>
+                <th class="main-heading">Period 3</th>
 
-    </table>
-    <table class="periodTables" id="Period6Table">
-        <tr>
-            <th class="main-heading">Period 6</th>
-            
-        </tr>
+            </tr>
 
-    </table>
-    <table class="periodTables" id="Period7Table">
-        <tr>
-            <th class="main-heading">Period 7</th>
-            
-        </tr>
+        </table>
+        <table class="periodTables" id="Period4Table">
+            <tr>
+                <th class="main-heading">Period 4</th>
 
-    </table>
-    <table class="periodTables" id="Period8Table">
-        <tr>
-            <th class="main-heading">Period 8</th>
-            
-        </tr>
+            </tr>
 
-    </table>
-    <table class="periodTables" id="Period9Table">
-        <tr>
-            <th class="main-heading">Period 9</th>
-            
-        </tr>
+        </table>
+        <table class="periodTables" id="Period5Table">
+            <tr>
+                <th class="main-heading">Period 5</th>
 
-    </table>
-    <table class="periodTables" id="Period10Table">
-        <tr>
-            <th class="main-heading">Period 10</th>
-            
-        </tr>
+            </tr>
 
-    </table>
+        </table>
+        <table class="periodTables" id="Period6Table">
+            <tr>
+                <th class="main-heading">Period 6</th>
+
+            </tr>
+
+        </table>
+        <table class="periodTables" id="Period7Table">
+            <tr>
+                <th class="main-heading">Period 7</th>
+
+            </tr>
+
+        </table>
+        <table class="periodTables" id="Period8Table">
+            <tr>
+                <th class="main-heading">Period 8</th>
+
+            </tr>
+
+        </table>
+        <table class="periodTables" id="Period9Table">
+            <tr>
+                <th class="main-heading">Period 9</th>
+
+            </tr>
+
+        </table>
+        <table class="periodTables" id="Period10Table">
+            <tr>
+                <th class="main-heading">Period 10</th>
+
+            </tr>
+
+        </table>
     </div>
 
 </body>
+
 </html>

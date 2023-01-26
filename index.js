@@ -183,9 +183,11 @@ app.post("/auth", async (req, res) => {
     const stuy = payload['hd'];
     const email = payload['email'];
     const userid = payload['sub'];
+    const name = payload['name'];
     console.log(`User authenticated with id: ${userid}`);
 
     const allInfo = {
+        name: name,
         stuy: stuy,
         email: email,
     }

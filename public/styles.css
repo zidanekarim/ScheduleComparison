@@ -19,7 +19,9 @@ td, th, tr{
 }
 
 
-
+.hideTable {
+    display: none;
+}
 
 .main-heading {
     font-size: 150%;
@@ -50,6 +52,8 @@ td, th, tr{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border: 2px solid black;
+    border-radius: 25px;
 }
 
 
@@ -60,6 +64,8 @@ td, th, tr{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border: 2px solid white;
+    border-radius: 25px;
 }
 
 
@@ -123,11 +129,24 @@ td, th, tr{
 
 #periods tr, #periods td, #periods th {
     border: 1px solid #000;
+    width: 1%;
+    
 }
 
-#main-table, #periods {
+.periodRow td, .periodRow th {
+    white-space: nowrap;
+    width: 1%;
+    padding: 0;
+    margin: 0;
+}
+
+
+#periods {
+    white-space: nowrap;
     border-collapse: collapse;
     width: 75%;
+    table-layout: auto;
+
 }
 
 #compareDiv.compareDivHide {

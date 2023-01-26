@@ -30,6 +30,7 @@ function onSignIn(googleUser) {
     
     // check if email ends in stuy.edu
     if (allInfo.email.endsWith("stuy.edu") || allInfo.email===("zkarim7676@gmail.com")) {
+        window.username = allInfo.name;
         window.email = allInfo.email;
         document.getElementById("submit").className = "button";
         document.getElementById("googleButton").className = "googleHide";
@@ -49,12 +50,9 @@ function onSignIn(googleUser) {
 
 processUser = () => {
     
-
-    name = document.getElementById("name").value ;
-
     
 
-        courseCode1 = document.getElementById("course-code1").value.toUpperCase().trim() ;
+    courseCode1 = document.getElementById("course-code1").value.toUpperCase().trim() ;
     section1 = document.getElementById("section1").value.toUpperCase().trim() ;
     room1 = document.getElementById("room1").value.toUpperCase().trim()  ;
 
@@ -96,7 +94,7 @@ processUser = () => {
 
 
     fullInfo = {
-        "Name": name,
+        "Name": window.username,
         "Email": window.email,
         "Period1": {
             "CourseCode": courseCode1,
@@ -207,6 +205,7 @@ function darkmode() {
         var elements = document.querySelectorAll(".navbar li a");
         elements.forEach(function(element){
             element.style.color = "white";
+            element.style.border = "2px solid white";
         });
         // make all borders white
         var elements = document.querySelectorAll(".main-table");
@@ -252,6 +251,8 @@ function darkmode() {
         var elements = document.querySelectorAll(".navbar li a");
         elements.forEach(function(element){
             element.style.color = "black";
+            element.style.border = "2px solid black";
+            
         });
         // make all borders white
         var elements = document.querySelectorAll(".main-table");

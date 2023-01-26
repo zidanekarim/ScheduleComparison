@@ -1,6 +1,62 @@
 var darkCheck = false;
+
+
+
+
+function onSignIn(googleUser) {
+
+      // Get the user's ID token and basic profile information
+    var id_token = googleUser.credential;
+    console.log(id_token)
+      // Send the ID token to server-side script called index.js for verification and
+      // to create a session.
+
+      
+
+
+    fetch('/auth', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Referrer-Policy': 'no-referrer-when-downgrade'},
+    body: JSON.stringify({ id_token:id_token})
+    })
+    .then(response => {
+    if(!response.ok) {
+        throw new Error(response.statusText);
+    }
+    return response.json();
+    })
+    .then(data => {
+    console.log("success", data);
+    console.log(data.allInfo)
+    const allInfo = data.allInfo;
+    
+    // check if email ends in stuy.edu
+    if (allInfo.email.endsWith("stuy.edu") || allInfo.email===("zkarim7676@gmail.com")) {
+        console.log("I got here!")
+        window.username = allInfo.name;
+        window.email = allInfo.email;
+        document.getElementById("signInTable").className = "hideTable";
+        document.getElementById("signInSuccess").className = "signInShow";
+        loginUser();
+    }
+    else {
+        alert("You are not a Stuyvesant student. Please use a Stuyvesant email address.");
+    }
+
+    })
+    .catch(error => {
+    console.log("error", error);
+    // Handle the error, for example, by displaying an error message to the user.
+    });
+}
+  
+
+
+
+
 function loginUser() {
-    let email = document.getElementById("emailLogin").value;
+    let email = window.email;
+    console.log("Logging in...")
     // check if email ends in @stuy.edu
 
     if (email == "" || email == null || email == undefined  || email == " " || !email.endsWith ("@stuy.edu")) {
@@ -167,7 +223,6 @@ function loginUser() {
             }
 
             // hide submit button 
-            document.getElementById("submitCompare").className = "hiddenButton";
 
 
     })
