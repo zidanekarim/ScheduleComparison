@@ -7,7 +7,7 @@ function onSignIn(googleUser) {
 
       // Get the user's ID token and basic profile information
     var id_token = googleUser.credential;
-    console.log(id_token)
+    //console.log(id_token)
       // Send the ID token to server-side script called index.js for verification and
       // to create a session.
 
@@ -26,8 +26,8 @@ function onSignIn(googleUser) {
     return response.json();
     })
     .then(data => {
-    console.log("success", data);
-    console.log(data.allInfo)
+    //console.log("success", data);
+    //.log(data.allInfo)
     const allInfo = data.allInfo;
     
     // check if email ends in stuy.edu
@@ -94,46 +94,46 @@ function loginUser() {
             const schedule9 = schedule[8];
             const schedule10 = schedule[9];
 
-            const emails1 = [];
-            const emails2 = [];
-            const emails3 = [];
-            const emails4 = [];
-            const emails5 = [];
-            const emails6 = [];
-            const emails7 = [];
-            const emails8 = [];
-            const emails9 = [];
-            const emails10 = [];
+            const names1 = [];
+            const names2 = [];
+            const names3 = [];
+            const names4 = [];
+            const names5 = [];
+            const names6 = [];
+            const names7 = [];
+            const names8 = [];
+            const names9 = [];
+            const names10 = [];
 
             for (let i = 0; i < schedule1.length; i++) {
-                emails1.push(schedule1[i].email);
+                names1.push(schedule1[i].name);
             }
             for (let i = 0; i < schedule2.length; i++) {
-                emails2.push(schedule2[i].email);
+                names2.push(schedule2[i].name);
             }
             for (let i = 0; i < schedule3.length; i++) {
-                emails3.push(schedule3[i].email);
+                names3.push(schedule3[i].name);
             }
             for (let i = 0; i < schedule4.length; i++) {
-                emails4.push(schedule4[i].email);
+                names4.push(schedule4[i].name);
             }
             for (let i = 0; i < schedule5.length; i++) {
-                emails5.push(schedule5[i].email);
+                names5.push(schedule5[i].name);
             }
             for (let i = 0; i < schedule6.length; i++) {
-                emails6.push(schedule6[i].email);
+                names6.push(schedule6[i].name);
             }
             for (let i = 0; i < schedule7.length; i++) {
-                emails7.push(schedule7[i].email);
+                names7.push(schedule7[i].name);
             }
             for (let i = 0; i < schedule8.length; i++) {
-                emails8.push(schedule8[i].email);
+                names8.push(schedule8[i].name);
             }
             for (let i = 0; i < schedule9.length; i++) {
-                emails9.push(schedule9[i].email);
+                names9.push(schedule9[i].name);
             }
             for (let i = 0; i < schedule10.length; i++) {
-                emails10.push(schedule10[i].email);
+                names10.push(schedule10[i].name);
             }
             
             // display all tables
@@ -154,82 +154,118 @@ function loginUser() {
             document.getElementById("Period10Table").getElementsByTagName('th')[0].setAttribute("title", schedule10[0].Period10.courseCode10);
 
             // add emails from email1 into Period1Table
-            for (let i = 0; i < emails1.length; i++) {
+            for (let i = 0; i < names1.length; i++) {
                 let newRow = Period1Table.insertRow(Period1Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails1[i];
-                // set title of cell to name
+                cell.innerHTML = names1[i];
+                // set title of cell to the user's email
+                cell.setAttribute("title", schedule1[i].email);
+                cell.setAttribute("class", "student");
             }
             // do this for all 10 periods
             const Period2Table = document.getElementById("Period2Table").getElementsByTagName('tbody')[0];
-            for (let i = 0; i < emails2.length; i++) {
+            for (let i = 0; i < names2.length; i++) {
                 let newRow = Period2Table.insertRow(Period2Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails2[i];
+                cell.innerHTML = names2[i];
+                cell.setAttribute("class", "student");
+                cell.setAttribute("title", schedule2[i].email);
             }
 
             const Period3Table = document.getElementById("Period3Table").getElementsByTagName('tbody')[0];
-            for (let i = 0; i < emails3.length; i++) {
+            for (let i = 0; i < names3.length; i++) {
                 let newRow = Period3Table.insertRow(Period3Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails3[i];
+                cell.innerHTML = names3[i];
+                cell.setAttribute("class", "student");
+                cell.setAttribute("title", schedule3[i].email);
             }
 
             const Period4Table = document.getElementById("Period4Table").getElementsByTagName('tbody')[0];
-            for (let i = 0; i < emails4.length; i++) {
+            for (let i = 0; i < names4.length; i++) {
                 let newRow = Period4Table.insertRow(Period4Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails4[i];
+                cell.innerHTML = names4[i];
+                cell.setAttribute("class", "student");
+                cell.setAttribute("title", schedule4[i].email);
             }
 
             const Period5Table = document.getElementById("Period5Table").getElementsByTagName('tbody')[0];
-            for (let i = 0; i < emails5.length; i++) {
+            for (let i = 0; i < names5.length; i++) {
                 let newRow = Period5Table.insertRow(Period5Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails5[i];
+                cell.innerHTML = names5[i];
+                cell.setAttribute("class", "student");
+                cell.setAttribute("title", schedule5[i].email);
             }
 
             const Period6Table = document.getElementById("Period6Table").getElementsByTagName('tbody')[0];
-            for (let i = 0; i < emails6.length; i++) {
+            for (let i = 0; i < names6.length; i++) {
                 let newRow = Period6Table.insertRow(Period6Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails6[i];
+                cell.innerHTML = names6[i];
+                cell.setAttribute("class", "student");
+                cell.setAttribute("title", schedule6[i].email);
             }
 
             const Period7Table = document.getElementById("Period7Table").getElementsByTagName('tbody')[0];
-            for (let i = 0; i < emails7.length; i++) {
+            for (let i = 0; i < names7.length; i++) {
                 let newRow = Period7Table.insertRow(Period7Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails7[i];
+                cell.innerHTML = names7[i];
+                cell.setAttribute("class", "student");
+                cell.setAttribute("title", schedule7[i].email);
             }
 
             const Period8Table = document.getElementById("Period8Table").getElementsByTagName('tbody')[0];
-            for (let i = 0; i < emails8.length; i++) {
+            for (let i = 0; i < names8.length; i++) {
                 let newRow = Period8Table.insertRow(Period8Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails8[i];
+                cell.innerHTML = names8[i];
+                cell.setAttribute("class", "student");
+                cell.setAttribute("title", schedule8[i].email);
             }
             const Period9Table = document.getElementById("Period9Table").getElementsByTagName('tbody')[0];
-            for (let i = 0; i < emails9.length; i++) {
+            for (let i = 0; i < names9.length; i++) {
                 let newRow = Period9Table.insertRow(Period9Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails9[i];
+                cell.innerHTML = names9[i];
+                cell.setAttribute("class", "student");
+                cell.setAttribute("title", schedule9[i].email);
             }
             const Period10Table = document.getElementById("Period10Table").getElementsByTagName('tbody')[0];
-            for (let i = 0; i < emails10.length; i++) {
+            for (let i = 0; i < names10.length; i++) {
                 let newRow = Period10Table.insertRow(Period10Table.length);
                 let cell = newRow.insertCell(0);
-                cell.innerHTML = emails10[i];
+                cell.innerHTML = names10[i];
+                // set class of cell to "student"
+                cell.setAttribute("class", "student");
+                cell.setAttribute("title", schedule10[i].email);
             }
 
             // hide submit button 
 
+            let elements = document.querySelectorAll('.student');
+            for(let i=0; i<elements.length; i++)
+            {   
+                let originalText = elements[i].textContent;
+                elements[i].addEventListener("mouseover", function(){
+                    elements[i].textContent = elements[i].getAttribute("title");
+                });
+                elements[i].addEventListener("mouseout", function(){
+                    elements[i].textContent = originalText;
+                });
+            }
 
     })
         
     
             
 }
+
+
+
+
 window.onload = function() {
     if (localStorage.getItem('darkCheck') === null) {
     // set darkCheck to true
@@ -261,6 +297,7 @@ function darkmode() {
         var elements = document.querySelectorAll(".navbar li a");
         elements.forEach(function(element){
             element.style.color = "white";
+            element.style.border = "2px solid white";
         });
         // make all borders white
         var elements = document.querySelectorAll(".main-table");
@@ -306,6 +343,8 @@ function darkmode() {
         var elements = document.querySelectorAll(".navbar li a");
         elements.forEach(function(element){
             element.style.color = "black";
+            element.style.border = "2px solid black";
+            
         });
         // make all borders white
         var elements = document.querySelectorAll(".main-table");
@@ -347,3 +386,4 @@ function darkmode() {
         
     }
 }
+

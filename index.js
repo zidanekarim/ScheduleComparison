@@ -137,17 +137,19 @@ app.post("/comparison", async (req, res) => {
 
         
         
-        // find all people with the same Period1
-        s1 = await Schedule.find({Period1 : Period1});
-        s2 = await Schedule.find({Period2 : Period2});
-        s3 = await Schedule.find({Period3 : Period3});
-        s4 = await Schedule.find({Period4 : Period4});
-        s5 = await Schedule.find({Period5 : Period5});
-        s6 = await Schedule.find({Period6 : Period6});
-        s7 = await Schedule.find({Period7 : Period7});
-        s8 = await Schedule.find({Period8 : Period8});
-        s9 = await Schedule.find({Period9 : Period9});
-        s10 = await Schedule.find({Period10 : Period10});
+        // find all people with the same Period1 courseCode and Period1 section
+        s1 = await Schedule.find({"Period1.courseCode1": Period1["courseCode1"], "Period1.section1": Period1["section1"]});
+        s2 = await Schedule.find({"Period2.courseCode2": Period2["courseCode2"], "Period2.section2": Period2["section2"]});
+        s3 = await Schedule.find({"Period3.courseCode3": Period3["courseCode3"], "Period3.section3": Period3["section3"]});
+        s4 = await Schedule.find({"Period4.courseCode4": Period4["courseCode4"], "Period4.section4": Period4["section4"]});
+        s5 = await Schedule.find({"Period5.courseCode5": Period5["courseCode5"], "Period5.section5": Period5["section5"]});
+        s6 = await Schedule.find({"Period6.courseCode6": Period6["courseCode6"], "Period6.section6": Period6["section6"]});
+        s7 = await Schedule.find({"Period7.courseCode7": Period7["courseCode7"], "Period7.section7": Period7["section7"]});
+        s8 = await Schedule.find({"Period8.courseCode8": Period8["courseCode8"], "Period8.section8": Period8["section8"]});
+        s9 = await Schedule.find({"Period9.courseCode9": Period9["courseCode9"], "Period9.section9": Period9["section9"]});
+        s10 = await Schedule.find({"Period10.courseCode10": Period10["courseCode10"], "Period10.section10": Period10["section10"]});
+        
+        
         const allSchedules = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10];
         res.status(200).json({allSchedules});
       
