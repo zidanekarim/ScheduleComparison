@@ -245,17 +245,6 @@ function loginUser() {
 
             // hide submit button 
 
-            let elements = document.querySelectorAll('.student');
-            for(let i=0; i<elements.length; i++)
-            {   
-                let originalText = elements[i].textContent;
-                elements[i].addEventListener("mouseover", function(){
-                    elements[i].textContent = elements[i].getAttribute("title");
-                });
-                elements[i].addEventListener("mouseout", function(){
-                    elements[i].textContent = originalText;
-                });
-            }
 
     })
         
@@ -300,36 +289,19 @@ function darkmode() {
             element.style.border = "2px solid white";
         });
         // make all borders white
-        var elements = document.querySelectorAll(".main-table");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #fff";
-        });
-        var elements = document.querySelectorAll(".main-table th");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #fff";
-        });
-        var elements = document.querySelectorAll(".main-table td");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #fff";
-        });
-        var elements = document.querySelectorAll(".main-table tr");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #fff";
-        });
 
-        var elements = document.querySelectorAll(".periodRow");
+
+        var elements = document.querySelectorAll(".periodTables");
+        
+        var elements = document.querySelectorAll(".periodTables td");
         elements.forEach(function(element){
             element.style.border = "1px solid #fff";
         });
-        var elements = document.querySelectorAll(".periodRow td");
+        var elements = document.querySelectorAll(".periodTables tr");
         elements.forEach(function(element){
             element.style.border = "1px solid #fff";
         });
-        var elements = document.querySelectorAll(".periodRow tr");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #fff";
-        });
-        var elements = document.querySelectorAll(".periodRow th");
+        var elements = document.querySelectorAll(".periodTables th");
         elements.forEach(function(element){
             element.style.border = "1px solid #fff";
         });

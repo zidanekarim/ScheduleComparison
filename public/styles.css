@@ -23,12 +23,7 @@ td, th, tr{
     display: none;
 }
 
-.main-heading {
-    font-size: 150%;
-    font-weight: bold;
-    
-    
-}
+
 
 .navbar, .navbar-dark {
     list-style-type: none;
@@ -123,7 +118,7 @@ td, th, tr{
 
 .periodTables tr, .periodTables td{
     table-layout: fixed;
-    font-weight: bold;
+    font-weight: 450;
     border: 1px solid #000;
 } 
 
@@ -275,7 +270,7 @@ td, th, tr{
 }
 
 .dark-mode {
-    background-color: #121212;
+    background-color: #121212 ;
     color: #fff;
 }
 
