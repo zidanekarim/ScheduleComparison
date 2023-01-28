@@ -1,6 +1,3 @@
-
-
-
 function onSignIn(googleUser) {
 
       // Get the user's ID token and basic profile information
@@ -35,6 +32,15 @@ function onSignIn(googleUser) {
         document.getElementById("submit").className = "button";
         document.getElementById("googleButton").className = "googleHide";
         document.getElementById("signInSuccess").className = "signInShow"
+        document.getElementById("signInSuccess").innerHTML = "Successfully signed in as " + window.username;
+        // store email in local storage
+        localStorage.setItem("email", window.email);
+        // store name in local storage
+        localStorage.setItem("name", window.username);
+
+        // show signOut button
+        document.getElementById("signOut").className = "signOutShow";
+
     }
     else {
         alert("You are not a Stuyvesant student. Please use a Stuyvesant email address.");
@@ -45,6 +51,23 @@ function onSignIn(googleUser) {
     console.log("error", error);
     // Handle the error, for example, by displaying an error message to the user.
     });
+}
+
+function signOut() {
+    // hide submit button
+    document.getElementById("submit").className = "hiddenButton";
+    // show google button
+    document.getElementById("googleButton").className = "g_id_signin";
+
+    // hide signOut button
+    document.getElementById("signOut").className = "signOutHide";
+
+    // hide signInSuccess
+    document.getElementById("signInSuccess").className = "signInHide";
+
+    // remove email from local storage
+    localStorage.removeItem("email");
+    localStorage.removeItem("name");
 }
   
 
@@ -183,6 +206,22 @@ window.onload = function() {
     }
 
     darkmode();
+
+    // if email exists in local storage, do these
+    if (localStorage.getItem('email') !== null) {
+
+        window.username = localStorage.getItem('name')
+        window.email = localStorage.getItem('email')
+        document.getElementById("submit").className = "button";
+        document.getElementById("googleButton").className = "googleHide";
+        document.getElementById("signInSuccess").className = "signInShow"
+        document.getElementById("signInSuccess").innerHTML = "Signed in as " + window.username;
+
+        // show signOut button
+        document.getElementById("signOut").className = "signOutShow";
+
+
+    }
 };
 function switchColors() {
     if (localStorage.getItem('darkCheck') === "true") {
@@ -201,6 +240,15 @@ function darkmode() {
     
     if (localStorage.getItem('darkCheck') === "false") {
         element.className = "dark-mode";
+
+        var descriptions = document.querySelectorAll(".description");
+        descriptions.forEach(function(description){
+            description.className = "description-dark";
+        });
+        var notes = document.querySelectorAll(".notes");
+        notes.forEach(function(note){
+            note.className = "notes-dark";
+        });
         
         var elements = document.querySelectorAll(".navbar li a");
         elements.forEach(function(element){
@@ -254,6 +302,16 @@ function darkmode() {
             element.style.border = "2px solid black";
             
         });
+
+        var descriptions = document.querySelectorAll(".description-dark");
+        descriptions.forEach(function(description){
+            description.className = "description";
+        });
+        var notes = document.querySelectorAll(".notes-dark");
+        notes.forEach(function(note){
+            note.className = "notes";
+        });
+
         // make all borders white
         var elements = document.querySelectorAll(".main-table");
         elements.forEach(function(element){

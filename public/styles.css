@@ -1,4 +1,4 @@
-#description {
+.description {
     color: red;
     font-size: 150%;
     font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
@@ -36,6 +36,15 @@ td, th, tr{
     color: red;
     font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
 }
+
+.description-dark, .notes-dark {
+    color: white;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+}
+.description-dark {
+    font-size: 150%;
+}
+
 .navbar li, .navbar-dark li {
     float: left;
     display: inline;
@@ -119,7 +128,6 @@ td, th, tr{
 .periodTables tr, .periodTables td{
     table-layout: fixed;
     font-weight: 450;
-    border: 1px solid #000;
 } 
 
 #periods tr, #periods td, #periods th {
@@ -277,4 +285,11 @@ td, th, tr{
 .light-mode {
     background-color: #fff;
     color: #000;
+}
+
+.signOutHide {
+    display: none !important;
+}
+.signOutShow {
+    display: block !important;
 }

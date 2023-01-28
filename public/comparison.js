@@ -2,6 +2,37 @@ var darkCheck = false;
 
 
 
+function signOut() {
+    // show signInTable by removing hideTable class
+    document.getElementById("signInTable").className = "signInTable";
+
+    // show google button
+    document.getElementById("googleButton").className = "g_id_signin";
+
+    // hide signOut button
+    document.getElementById("signOut").className = "signOutHide";
+
+    // hide signInSuccess
+    document.getElementById("signInSuccess").className = "signInHide";
+
+    // remove email from local storage
+    localStorage.removeItem("email");
+    localStorage.removeItem("name");
+
+    // clear each Period Table's body
+    for (let i = 1; i <= 10; i++) {
+        let table = $(`#Period${i}Table tbody`);
+        table.find('tr td:not(:first-child)').remove();
+    }
+
+    // hide compareDiv
+    document.getElementById("compareDiv").className = "compareDivHide";
+    
+    
+
+
+
+}
 
 function onSignIn(googleUser) {
 
@@ -35,9 +66,19 @@ function onSignIn(googleUser) {
         console.log("I got here!")
         window.username = allInfo.name;
         window.email = allInfo.email;
+
+        // store email in local storage
+        localStorage.setItem("email", window.email);
+        localStorage.setItem("name", window.username);
+
         document.getElementById("signInTable").className = "hideTable";
         document.getElementById("signInSuccess").className = "signInShow";
+        document.getElementById("signInSuccess").innerHTML = "Successfully signed in as " + window.username;
+        // show sign out button
+        document.getElementById("signOut").className = "signOutShow";
         loginUser();
+
+        
     }
     else {
         alert("You are not a Stuyvesant student. Please use a Stuyvesant email address.");
@@ -139,9 +180,10 @@ function loginUser() {
             // display all tables
             
 
-            const Period1Table = document.getElementById("Period1Table").getElementsByTagName('tbody')[0];
+            
             // add schedule1.courseCode1 into Period1Table th title
             //console.log(schedule1[0])
+            console.log(document.getElementById("Period1Table"));
             document.getElementById("Period1Table").getElementsByTagName('th')[0].setAttribute("title", schedule1[0].Period1.courseCode1);
             document.getElementById("Period2Table").getElementsByTagName('th')[0].setAttribute("title", schedule2[0].Period2.courseCode2);
             document.getElementById("Period3Table").getElementsByTagName('th')[0].setAttribute("title", schedule3[0].Period3.courseCode3);
@@ -154,6 +196,7 @@ function loginUser() {
             document.getElementById("Period10Table").getElementsByTagName('th')[0].setAttribute("title", schedule10[0].Period10.courseCode10);
 
             // add emails from email1 into Period1Table
+            const Period1Table = document.getElementById("Period1Table").getElementsByTagName('tbody')[0];
             for (let i = 0; i < names1.length; i++) {
                 let newRow = Period1Table.insertRow(Period1Table.length);
                 let cell = newRow.insertCell(0);
@@ -254,7 +297,6 @@ function loginUser() {
 
 
 
-
 window.onload = function() {
     if (localStorage.getItem('darkCheck') === null) {
     // set darkCheck to true
@@ -264,6 +306,21 @@ window.onload = function() {
     //console.log(localStorage.getItem('darkCheck') + " is darkCheck")
     //console.log(localStorage.getItem('darkCheck'), typeof localStorage.getItem('darkCheck'))
     darkmode();
+    if (localStorage.getItem('email') !== null) {
+
+        window.username = localStorage.getItem('name')
+        window.email = localStorage.getItem('email')
+        document.getElementById("signInTable").className = "hideTable";
+        document.getElementById("signInSuccess").className = "signInShow";
+        document.getElementById("signInSuccess").innerHTML = "Successfully signed in as " + window.username;
+        
+
+        // show signOut button
+        document.getElementById("signOut").className = "signOutShow";
+        loginUser();
+
+
+    }
 };   
 function switchColors() {
     if (localStorage.getItem('darkCheck') === "true") {
@@ -291,20 +348,9 @@ function darkmode() {
         // make all borders white
 
 
-        var elements = document.querySelectorAll(".periodTables");
         
-        var elements = document.querySelectorAll(".periodTables td");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #fff";
-        });
-        var elements = document.querySelectorAll(".periodTables tr");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #fff";
-        });
-        var elements = document.querySelectorAll(".periodTables th");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #fff";
-        });
+
+      
 
 
         //console.log(localStorage.getItem('darkCheck') + "second");
@@ -317,40 +363,7 @@ function darkmode() {
             element.style.color = "black";
             element.style.border = "2px solid black";
             
-        });
-        // make all borders white
-        var elements = document.querySelectorAll(".main-table");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #000";
-        });
-        var elements = document.querySelectorAll(".main-table th");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #000";
-        });
-        var elements = document.querySelectorAll(".main-table td");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #000";
-        });
-        var elements = document.querySelectorAll(".main-table tr");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #000";
-        });
-
-        var elements = document.querySelectorAll(".periodRow");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #000";
-        });
-        var elements = document.querySelectorAll(".periodRow td");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #000";
-        });
-        var elements = document.querySelectorAll(".periodRow tr");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #000";
-        });
-        var elements = document.querySelectorAll(".periodRow th");
-        elements.forEach(function(element){
-            element.style.border = "1px solid #000";
+        
         });
 
         
