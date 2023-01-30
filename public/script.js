@@ -208,20 +208,7 @@ window.onload = function() {
     darkmode();
 
     // if email exists in local storage, do these
-    if (localStorage.getItem('email') !== null) {
-
-        window.username = localStorage.getItem('name')
-        window.email = localStorage.getItem('email')
-        document.getElementById("submit").className = "button";
-        document.getElementById("googleButton").className = "googleHide";
-        document.getElementById("signInSuccess").className = "signInShow"
-        document.getElementById("signInSuccess").innerHTML = "Signed in as " + window.username;
-
-        // show signOut button
-        document.getElementById("signOut").className = "signOutShow";
-
-
-    }
+    
 };
 function switchColors() {
     if (localStorage.getItem('darkCheck') === "true") {
