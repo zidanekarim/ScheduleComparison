@@ -2,7 +2,7 @@
   "name": "schedule-website",
   "version": "1.0.0",
   "description": "Stuyvesant Schedule Comparison",
-  "main": "data.js",
+  "main": "index.js",
   "repository": "https://github.com/ThePotatoPowers/ScheduleComparison",
   "author": "Zidane Karim (zkarim7676@gmail.com)",
   "license": "MIT",
