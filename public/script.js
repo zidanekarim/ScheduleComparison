@@ -6,9 +6,6 @@ function onSignIn(googleUser) {
       // Send the ID token to server-side script called index.js for verification and
       // to create a session.
 
-      
-
-
     fetch('/auth', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Referrer-Policy': 'no-referrer-when-downgrade'},
