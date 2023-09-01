@@ -208,6 +208,60 @@ app.post("/auth", async (req, res) => {
 app.post('/sendSharedVariable', (req, res) => {
   Schedule.find({email : req.body.sharedVariable["Email"] }, function(err, schedules) {
     if (schedules.length) {
+        // if the Period is blank, then don't update it
+        if (req.body.sharedVariable["Period1"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period1"]["CourseCode"] = schedules[0]["Period1"]["courseCode1"];
+            req.body.sharedVariable["Period1"]["Section"] = schedules[0]["Period1"]["section1"];
+            req.body.sharedVariable["Period1"]["Room"] = schedules[0]["Period1"]["room1"];
+        }
+        if (req.body.sharedVariable["Period2"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period2"]["CourseCode"] = schedules[0]["Period2"]["courseCode2"];
+            req.body.sharedVariable["Period2"]["Section"] = schedules[0]["Period2"]["section2"];
+            req.body.sharedVariable["Period2"]["Room"] = schedules[0]["Period2"]["room2"];
+        }
+        if (req.body.sharedVariable["Period3"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period3"]["CourseCode"] = schedules[0]["Period3"]["courseCode3"];
+            req.body.sharedVariable["Period3"]["Section"] = schedules[0]["Period3"]["section3"];
+            req.body.sharedVariable["Period3"]["Room"] = schedules[0]["Period3"]["room3"];
+        }
+        if (req.body.sharedVariable["Period4"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period4"]["CourseCode"] = schedules[0]["Period4"]["courseCode4"];
+            req.body.sharedVariable["Period4"]["Section"] = schedules[0]["Period4"]["section4"];
+            req.body.sharedVariable["Period4"]["Room"] = schedules[0]["Period4"]["room4"];
+        }
+        if (req.body.sharedVariable["Period5"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period5"]["CourseCode"] = schedules[0]["Period5"]["courseCode5"];
+            req.body.sharedVariable["Period5"]["Section"] = schedules[0]["Period5"]["section5"];
+            req.body.sharedVariable["Period5"]["Room"] = schedules[0]["Period5"]["room5"];
+        }
+        if (req.body.sharedVariable["Period6"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period6"]["CourseCode"] = schedules[0]["Period6"]["courseCode6"];
+            req.body.sharedVariable["Period6"]["Section"] = schedules[0]["Period6"]["section6"];
+            req.body.sharedVariable["Period6"]["Room"] = schedules[0]["Period6"]["room6"];
+        }
+        if (req.body.sharedVariable["Period7"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period7"]["CourseCode"] = schedules[0]["Period7"]["courseCode7"];
+            req.body.sharedVariable["Period7"]["Section"] = schedules[0]["Period7"]["section7"];
+            req.body.sharedVariable["Period7"]["Room"] = schedules[0]["Period7"]["room7"];
+        }
+        if (req.body.sharedVariable["Period8"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period8"]["CourseCode"] = schedules[0]["Period8"]["courseCode8"];
+            req.body.sharedVariable["Period8"]["Section"] = schedules[0]["Period8"]["section8"];
+            req.body.sharedVariable["Period8"]["Room"] = schedules[0]["Period8"]["room8"];
+        }
+        if (req.body.sharedVariable["Period9"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period9"]["CourseCode"] = schedules[0]["Period9"]["courseCode9"];
+            req.body.sharedVariable["Period9"]["Section"] = schedules[0]["Period9"]["section9"];
+            req.body.sharedVariable["Period9"]["Room"] = schedules[0]["Period9"]["room9"];
+        }
+        if (req.body.sharedVariable["Period10"]["CourseCode"] == "") {
+            req.body.sharedVariable["Period10"]["CourseCode"] = schedules[0]["Period10"]["courseCode10"];
+            req.body.sharedVariable["Period10"]["Section"] = schedules[0]["Period10"]["section10"];
+            req.body.sharedVariable["Period10"]["Room"] = schedules[0]["Period10"]["room10"];
+        }
+
+
+
         Schedule.findOneAndUpdate({email : req.body.sharedVariable["Email"] }, {
         name: req.body.sharedVariable["Name"],
         email: req.body.sharedVariable["Email"],
