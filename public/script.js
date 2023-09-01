@@ -74,43 +74,43 @@ processUser = () => {
 
     courseCode1 = document.getElementById("course-code1").value.toUpperCase().trim() ;
     section1 = document.getElementById("section1").value.toUpperCase().trim() ;
-    room1 = document.getElementById("room1").value.toUpperCase().trim()  ;
+    room1 = ""  ;
 
     courseCode2 = document.getElementById("course-code2").value.toUpperCase().trim();
     section2 = document.getElementById("section2").value.toUpperCase().trim();
-    room2 = document.getElementById("room2").value.toUpperCase().trim();
+    room2 = "";
 
     courseCode3 = document.getElementById("course-code3").value.toUpperCase().trim();
     section3 = document.getElementById("section3").value.toUpperCase().trim();
-    room3 = document.getElementById("room3").value.toUpperCase().trim();
+    room3 = "";
 
     courseCode4 = document.getElementById("course-code4").value.toUpperCase().trim();
     section4 = document.getElementById("section4").value.toUpperCase().trim();
-    room4 = document.getElementById("room4").value.toUpperCase().trim();
+    room4 = "";
 
     courseCode5 = document.getElementById("course-code5").value.toUpperCase().trim();
     section5 = document.getElementById("section5").value.toUpperCase().trim();
-    room5 = document.getElementById("room5").value.toUpperCase().trim();
+    room5 = "";
 
     courseCode6 = document.getElementById("course-code6").value.toUpperCase().trim();
     section6 = document.getElementById("section6").value.toUpperCase().trim();
-    room6 = document.getElementById("room6").value.toUpperCase().trim();
+    room6 = "";
 
     courseCode7 = document.getElementById("course-code7").value.toUpperCase().trim();
     section7 = document.getElementById("section7").value.toUpperCase().trim();
-    room7 = document.getElementById("room7").value.toUpperCase().trim();
+    room7 = "";
     
     courseCode8 = document.getElementById("course-code8").value.toUpperCase().trim();
     section8 = document.getElementById("section8").value.toUpperCase().trim();
-    room8 = document.getElementById("room8").value.toUpperCase().trim();
+    room8 = "";
 
     courseCode9 = document.getElementById("course-code9").value.toUpperCase().trim();
     section9 = document.getElementById("section9").value.toUpperCase().trim();
-    room9 = document.getElementById("room9").value.toUpperCase().trim();
+    room9 = "";
 
     courseCode10 = document.getElementById("course-code10").value.toUpperCase().trim();
     section10 = document.getElementById("section10").value.toUpperCase().trim();
-    room10 = document.getElementById("room10").value.toUpperCase().trim();
+    room10 = "";
 
 
     fullInfo = {
